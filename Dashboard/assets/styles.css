@@ -1,0 +1,227 @@
+/* Define reusable colours for the dark navy dashboard theme. */
+:root {
+  --bg: #050b14;
+  --panel: #0b1726;
+  --panel-2: #0f2033;
+  --border: rgba(148, 163, 184, 0.18);
+  --text: #e8f0fa;
+  --muted: #9fb0c5;
+  --cyan: #22d3ee;
+  --green: #34d399;
+  --orange: #fb923c;
+}
+
+/* Apply the layered page background and default text colour. */
+.stApp {
+  background:
+    radial-gradient(circle at 85% 0%, rgba(34, 211, 238, 0.08), transparent 30%),
+    linear-gradient(180deg, #050b14 0%, #07111f 100%);
+  color: var(--text);
+}
+
+/* Keep wide-screen content readable while preserving generous spacing. */
+.block-container {
+  max-width: 1600px;
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+/* Style the summary hero as a flexible headline card. */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.55rem 1.7rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(15, 32, 51, 0.98), rgba(7, 17, 31, 0.96));
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
+}
+
+/* Scale the main title responsively across desktop widths. */
+.hero h1 {
+  margin: 0.2rem 0 0.4rem;
+  color: #f8fafc;
+  font-size: clamp(2rem, 3.2vw, 3.15rem);
+  letter-spacing: -0.035em;
+}
+
+/* Use muted body copy for supporting dashboard explanations. */
+.hero p, .section-intro p, .zone-profile p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* Format objective labels as compact cyan section markers. */
+.eyebrow {
+  color: var(--cyan);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Style the validation badge and method note as rounded chips. */
+.hero-badge, .method-chip {
+  border: 1px solid rgba(52, 211, 153, 0.32);
+  border-radius: 999px;
+  background: rgba(52, 211, 153, 0.08);
+  color: #b7f7d8;
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 0.62rem 0.9rem;
+}
+
+/* Add a glowing status dot to the validated-evidence badge. */
+.hero-badge span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.9);
+}
+
+/* Space each objective introduction from the controls below it. */
+.section-intro {
+  padding: 1.2rem 0 0.5rem;
+}
+
+/* Keep objective headings prominent but smaller than the page title. */
+.section-intro h2 {
+  margin: 0.2rem 0 0.35rem;
+  color: #f8fafc;
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+}
+
+/* Present each Streamlit metric as a consistent dashboard card. */
+div[data-testid="stMetric"] {
+  min-height: 116px;
+  padding: 1rem 1.05rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(15, 32, 51, 0.94), rgba(9, 22, 36, 0.94));
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.025);
+}
+
+/* De-emphasise KPI labels so their values remain the visual focus. */
+div[data-testid="stMetricLabel"] p {
+  color: var(--muted);
+  font-weight: 650;
+}
+
+/* Keep long zone names visible without overpowering neighbouring KPI cards. */
+div[data-testid="stMetricValue"] {
+  color: #f8fafc;
+  font-size: clamp(1.65rem, 2.2vw, 2.25rem);
+  font-weight: 750;
+}
+
+/* Group the three objective tabs inside one bordered navigation strip. */
+.stTabs [data-baseweb="tab-list"] {
+  gap: 0.35rem;
+  padding: 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(8, 20, 34, 0.86);
+}
+
+/* Style each tab as a clear navigation button. */
+.stTabs [data-baseweb="tab"] {
+  min-height: 46px;
+  border-radius: 10px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+/* Highlight the currently selected objective tab. */
+.stTabs [aria-selected="true"] {
+  color: #e8fbff;
+  background: rgba(34, 211, 238, 0.11);
+}
+
+/* Place charts and data tables inside matching rounded panels. */
+div[data-testid="stPlotlyChart"], div[data-testid="stDataFrame"] {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+/* Lay out the selected-zone explanation and status side by side. */
+.zone-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 1rem 0;
+  padding: 1.15rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(13, 27, 42, 0.94);
+}
+
+/* Keep the selected-zone title aligned with its evidence labels. */
+.zone-profile h3 {
+  margin: 0.2rem 0 0.3rem;
+  color: #f8fafc;
+}
+
+/* Share the pill shape between review and clear status indicators. */
+.status-review, .status-clear {
+  border-radius: 999px;
+  padding: 0.58rem 0.82rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* Use orange to mark zones requiring deployment consideration. */
+.status-review {
+  border: 1px solid rgba(251, 146, 60, 0.38);
+  background: rgba(251, 146, 60, 0.1);
+  color: #fed7aa;
+}
+
+/* Use green when the selected zone does not meet the combined threshold. */
+.status-clear {
+  border: 1px solid rgba(52, 211, 153, 0.32);
+  background: rgba(52, 211, 153, 0.08);
+  color: #b7f7d8;
+}
+
+/* Adapt the shared chip style for the Objective 2 subgroup definition. */
+.method-chip {
+  margin-top: 1.8rem;
+  border-color: rgba(34, 211, 238, 0.25);
+  background: rgba(34, 211, 238, 0.07);
+  color: #a5f3fc;
+  text-align: center;
+}
+
+/* Separate the source-coverage reminder from the analytical content. */
+.footer-note {
+  margin-top: 2rem;
+  padding: 1rem 1.15rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+/* Stack wide cards and badges cleanly on narrower screens. */
+@media (max-width: 850px) {
+  .hero, .zone-profile {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero-badge {
+    white-space: normal;
+  }
+}
