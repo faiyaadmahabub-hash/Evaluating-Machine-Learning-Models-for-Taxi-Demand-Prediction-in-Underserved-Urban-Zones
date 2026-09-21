@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Asia Pacific University\All Module Notes\Semister-5\Investigations\FYP Semester 1\Progress\fyp\.venv"
+VIRTUAL_ENV="C:\Asia Pacific University\All Module Notes\Semister-5\Investigations\FYP Semester 1\Progress\Faiyad_Mahabub_TP077983_APU3F2601CSDA_Source Code 1\.venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
