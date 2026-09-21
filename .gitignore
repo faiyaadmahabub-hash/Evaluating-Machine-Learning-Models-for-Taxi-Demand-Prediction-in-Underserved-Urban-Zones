@@ -20,3 +20,11 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+# Large datasets
+processed_outputs/model_datasets/
+
+# Trained models
+processed_outputs/model_results/
+
+*.joblib
+*.csv
