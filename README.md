@@ -6,7 +6,7 @@ Final-year BSc project at Asia Pacific University comparing Random Forest and XG
 
 ![Historical notebook chart comparing test RMSE for eight model configurations](docs/assets/historical-test-rmse.png)
 
-*Original figure extracted from the saved evaluation notebook. Lower RMSE is better; the test window is 14?31 March 2025. This is a result plot, not a dashboard screenshot.*
+*Original figure extracted from the saved evaluation notebook. Lower RMSE is better; the test window is 14-31 March 2025. This is a result plot, not a dashboard screenshot.*
 
 ## What the project demonstrates
 
@@ -28,7 +28,7 @@ flowchart LR
 
 ## Results and their interpretation
 
-Saved notebook evaluation covers 259 zones ? 432 test hours (111,888 observations):
+Saved notebook evaluation covers 259 zones x 432 test hours (111,888 observations):
 
 | Configuration | Baseline RMSE | Enriched RMSE |
 |---|---:|---:|
@@ -37,9 +37,9 @@ Saved notebook evaluation covers 259 zones ? 432 test hours (111,888 observation
 | XGBoost, default | 54.6276 | 13.3107 |
 | XGBoost, tuned | 54.6447 | 12.0126 |
 
-Enriched default Random Forest has recorded MAE **3.8465** and R? **0.9569** overall. For the 49 training-defined low-demand outer-borough zones, enriched tuned Random Forest has recorded pooled RMSE **0.3403** and R? **0.1052**. The full guide preserves all comparisons, including negative and undefined zone-level R? values.
+Enriched default Random Forest has recorded MAE **3.8465** and R-squared **0.9569** overall. For the 49 training-defined low-demand outer-borough zones, enriched tuned Random Forest has recorded pooled RMSE **0.3403** and R-squared **0.1052**. The full guide preserves all comparisons, including negative and undefined zone-level R-squared values.
 
-The large enrichment improvement needs care: the static context values also distinguish zones, while the baseline has neither zone identity nor lagged demand. This experiment does **not** isolate a causal accessibility effect. Pooled scores are dominated by Manhattan; sparse-zone R? is unstable. Tuning does not consistently improve held-out test performance.
+The large enrichment improvement needs care: the static context values also distinguish zones, while the baseline has neither zone identity nor lagged demand. This experiment does **not** isolate a causal accessibility effect. Pooled scores are dominated by Manhattan; sparse-zone R-squared is unstable. Tuning does not consistently improve held-out test performance.
 
 ## Inspect and reproduce
 
